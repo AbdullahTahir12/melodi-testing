@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "198536869914",
+    "project_id": "melodiapp-6c1df",
+    "storage_bucket": "melodiapp-6c1df.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:198536869914:android:4ad35e24535db4c08239a3",
+        "android_client_info": {
+          "package_name": "com.testingmelodi"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "198536869914-0ebg5h19sc7seqbactl56em65j8ibarg.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.testingmelodi",
+            "certificate_hash": "5e8f16062ea3cd2c4a0d547876baa6f38cabf625"
+          }
+        },
+        {
+          "client_id": "198536869914-if2k63fas29u8qpgqk1c110j1idbvpo7.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBJUR9hM4ey9tSAaxOoG9QHvSvm7OT9SvU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "198536869914-if2k63fas29u8qpgqk1c110j1idbvpo7.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
