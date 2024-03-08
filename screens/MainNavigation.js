@@ -41,7 +41,18 @@ export default function MainNavigation() {
           {isUserLoggedIn ? (
             <>
               <Stack.Screen name="Home" component={Home} />
-              <Stack.Screen name="ProfileScreen" component={ProfileScreen} />
+              <Stack.Screen
+                name="ProfileScreen"
+                component={ProfileScreen}
+                options={{
+                  headerShown: true,
+                  headerTitle: 'Profile',
+                  headerTitleAlign: 'center',
+                  headerTitleStyle: {
+                    color: '#81bfaa',
+                  },
+                }}
+              />
             </>
           ) : (
             <>

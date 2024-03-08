@@ -8,7 +8,6 @@ import AsyncStorage from '@react-native-async-storage/async-storage';
 
 const ChatScreen = ({route}) => {
   const {chatPersonId} = route.params;
-  console.log(chatPersonId);
   const [messages, setMessages] = useState([]);
   const [conversation, setConversation] = useState([]); // This will track the entire conversation history for the API payload
   const [isTyping, setIsTyping] = useState(false);
@@ -18,6 +17,35 @@ const ChatScreen = ({route}) => {
   // useEffect(() => {
   //   // Initial message setup if necessary
   // }, []);
+
+  useEffect(() => {
+    // Retrieve stored messages on component mount
+    const getStoredMessages = async () => {
+      try {
+        const storedMessages = await AsyncStorage.getItem('chatMessages');
+        if (storedMessages) {
+          setMessages(JSON.parse(storedMessages));
+        }
+      } catch (error) {
+        console.error('Error retrieving messages from AsyncStorage:', error);
+      }
+    };
+
+    getStoredMessages();
+  }, []);
+
+  useEffect(() => {
+    // Store updated messages on changes
+    const storeMessages = async () => {
+      try {
+        await AsyncStorage.setItem('chatMessages', JSON.stringify(messages));
+      } catch (error) {
+        console.error('Error storing messages in AsyncStorage:', error);
+      }
+    };
+
+    storeMessages();
+  }, [messages]);
 
   const outgoingSound = new Sound('sent.mp3', Sound.MAIN_BUNDLE, error => {
     if (error) {

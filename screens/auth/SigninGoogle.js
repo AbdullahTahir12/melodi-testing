@@ -15,9 +15,18 @@ const SigninGoogle = () => {
   const {updateUserInfo} = useContext(AuthContext);
   const [userInfo, setUserInfo] = useState(null);
 
+  // const saveUserDataToStorage = async userInfo => {
+  //   try {
+  //     await AsyncStorage.setItem('user_info', JSON.stringify(userInfo));
+  //   } catch (error) {
+  //     console.error('Error saving user data:', error);
+  //   }
+  // };
+
   const saveUserDataToStorage = async userInfo => {
     try {
       await AsyncStorage.setItem('user_info', JSON.stringify(userInfo));
+      await AsyncStorage.setItem('user_email', userInfo.user.email);
     } catch (error) {
       console.error('Error saving user data:', error);
     }

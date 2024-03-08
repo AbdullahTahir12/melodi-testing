@@ -3,6 +3,7 @@ import {View, Text, StyleSheet, TouchableOpacity, Image} from 'react-native';
 import {StatusBar} from 'react-native';
 import {useNavigation} from '@react-navigation/native';
 import AsyncStorage from '@react-native-async-storage/async-storage';
+import ShareOption from './ShareOption';
 
 const Home = () => {
   const navigation = useNavigation();
@@ -52,6 +53,7 @@ const Home = () => {
         </TouchableOpacity>
       )}
 
+      <ShareOption />
       <StatusBar style="auto" />
     </View>
   );
